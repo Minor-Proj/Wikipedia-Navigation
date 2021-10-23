@@ -11,5 +11,5 @@ def speak(text):
     engine.runAndWait()
 
 if __name__ == '__main__':
-    # speak("hello sir")
+    speak("hello sir")
     pass
