@@ -1,0 +1,15 @@
+To control the navigation and search on Wikipedia using voice commands. Users will be able to  navigate web pages through audio commands along with shortcut keys which can be as follows:
+
+1.	Next Link/ previous link
+2.	Next heading/ previous heading
+3.	Next table/ previous table
+4.	Next image/ previous image
+5.	Next list/ Previous list
+6.	Move up/ Move down
+7.	Read web page statistics    // no. of tables,  
+
+8.	Go to search   // main Wikipedia page   (Wikipedia search )
+9.	Online help and other   // google, dictionary
+10.	Next page  (if time is left)
+
+The developed system will use voice commands and very few short keys for the above functionalities. 
