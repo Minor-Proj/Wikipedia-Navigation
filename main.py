@@ -30,13 +30,22 @@ if __name__ == '__main__':
     while True:
         query = takecommand().lower()
 
-        if "open notepad" in query:
-            npath = "C:\\WINDOWS\\system32\\notepad.exe"
-            os.startfile(npath)
+        # if "open notepad" in query:
+        #     npath = "C:\\WINDOWS\\system32\\notepad.exe"
+        #     os.startfile(npath)
         
-        elif "wikipedia" in query:
+        # elif "wikipedia" in query:
+        #     speak("searching wikipedia")
+        #     query = query.replace("wikipedia","")
+        #     results = wikipedia.summary(query,sentences=2)
+        #     speak("According to wikipedia...")
+        #     speak(results)
+
+        if "how are you" in query:
+            speak("I am fine sir thank you!")
+        elif "please search" in query:
             speak("searching wikipedia")
-            query = query.replace("wikipedia","")
+            query = query.replace("please search","")
             results = wikipedia.summary(query,sentences=2)
             speak("According to wikipedia...")
             speak(results)
