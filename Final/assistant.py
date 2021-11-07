@@ -175,7 +175,10 @@ def main_function():
             query = takecommand().lower()
         except UnboundLocalError:
             speak("Try again")
-            
+        
+        if "exit" in query:
+            return None
+
         if  "search page" or "main page" in query:
             search_page()
             time.sleep(1)
@@ -257,6 +260,8 @@ def main_function():
                 except UnboundLocalError:
                     speak("Try again")
                     
+                if "exit" in query2:
+                    return None
 
                 #move up (working)
                 if "up" in query2:
