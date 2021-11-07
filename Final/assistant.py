@@ -177,6 +177,7 @@ def main_function():
             speak("Try again")
         
         if "exit" in query:
+            speak("Exitting! Have a nice day")
             return None
 
         if  "search page" or "main page" in query:
@@ -261,6 +262,7 @@ def main_function():
                     speak("Try again")
                     
                 if "exit" in query2:
+                    speak("Exitting! Have a nice day")
                     return None
 
                 #move up (working)
@@ -401,6 +403,7 @@ if __name__ == '__main__':
     while True:
         if keyboard.read_key() == "space":
             print("You pressed space")
+            speak("Space Bar key pressed")
             search_page()
             main_function()
 
