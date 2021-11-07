@@ -391,7 +391,7 @@ if __name__ == '__main__':
     # driver.maximize_window()
     time.sleep(2)
     search_page()
-    speak("To initate the wikipedia assistant, press space bar key!")
+    speak("To initiate the wikipedia assistant, press space bar key!")
 
     while True:
         if keyboard.read_key() == "space":
