@@ -3,6 +3,7 @@ import pyttsx3
 import datetime
 import speech_recognition as sr
 from pygame import mixer
+import pygame
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -15,6 +16,9 @@ import time
 import re
 import json
 import requests
+import keyboard
+
+pygame.init()
 
 
 
@@ -376,24 +380,18 @@ def main_function():
                 # first do what he says,then break this loop
                 
                     
-                
-                    
-                
-
-
-
-
-
-
 
 
 
 if __name__ == '__main__':
     
-    # create window for navigation
-    s=Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=s)
-    # driver.maximize_window()
-    time.sleep(2)
-    search_page()
+    # # create window for navigation
+    # s=Service(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(service=s)
+    # # driver.maximize_window()
+    # time.sleep(2)
+    # search_page()
+
     main_function()
+
+    
