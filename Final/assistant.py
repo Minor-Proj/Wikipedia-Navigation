@@ -11,7 +11,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
-import wikipedia
 import time
 import re
 import json
@@ -169,6 +168,7 @@ def news(word):
 
 
 def main_function():
+    wish()
     while True:
         query = ''
         try:
@@ -385,13 +385,18 @@ def main_function():
 
 if __name__ == '__main__':
     
-    # # create window for navigation
-    # s=Service(ChromeDriverManager().install())
-    # driver = webdriver.Chrome(service=s)
-    # # driver.maximize_window()
-    # time.sleep(2)
-    # search_page()
+    # create window for navigation
+    s=Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=s)
+    # driver.maximize_window()
+    time.sleep(2)
+    search_page()
+    speak("To initate the wikipedia assistant, press space bar key!")
 
-    main_function()
+    while True:
+        if keyboard.read_key() == "space":
+            print("You pressed space")
+            search_page()
+            main_function()
 
     
