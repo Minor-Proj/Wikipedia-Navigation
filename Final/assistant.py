@@ -224,9 +224,15 @@ def main_function():
             query = query.replace("wikipedia","")
             search_wikipedia(query)
             
+
+
             # Scrapping content from wikipedia
-            all_links,all_headings,all_paras,all_images = getAllContent()
-            
+            try:
+                all_links,all_headings,all_paras,all_images = getAllContent()
+            except:
+                speak("Could not found,try again!")
+                search_page()
+                continue
             # initially
             curr_link = all_links[0]
             curr_heading = all_headings[1]
