@@ -237,7 +237,7 @@ def main_function():
             curr_link = all_links[0]
             curr_heading = all_headings[1]
             curr_para = all_paras[0]
-            curr_image = all_images[0]
+            #curr_image = all_images[0]
             
             # length of all contents
             all_link_len = len(all_links)
@@ -369,6 +369,9 @@ def main_function():
                 
     #             next image
                 elif "next image" in query2:
+                    if all_image_len == 0:
+                        speak("There are no images in this page")
+                        continue
                     if imgIndex<len(imgList):
                         imgIndex+=1
                         showImage("https:"+imgList[imgIndex])
@@ -376,6 +379,9 @@ def main_function():
 
                 # previous image
                 elif "previous image" in query2:
+                    if all_image_len == 0:
+                        speak("There are no images in this page")
+                        continue
                     if imgIndex > 0:
                         imgIndex -= 1
                         showImage("https:"+imgList[imgIndex])
