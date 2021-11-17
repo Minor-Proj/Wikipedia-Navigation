@@ -100,7 +100,7 @@ def move_up():
 
 def getAllContent():
     allHtmlContent = driver.page_source
-    htmlContent = BeautifulSoup(allHtmlContent)
+    htmlContent = BeautifulSoup(allHtmlContent,features='html.parser')
     reqHtmlContent = htmlContent.find(class_ = "mw-parser-output")
     all_links = list(reqHtmlContent.find_all('a'))
     all_headings = list(reqHtmlContent.find_all(['h2','h3']))
