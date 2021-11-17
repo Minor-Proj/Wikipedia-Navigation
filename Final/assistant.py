@@ -111,6 +111,7 @@ def getAllContent():
 
 
 def webPageStats():
+    speak("Fetching webpage statistics")
     page_title = driver.find_element_by_id("firstHeading").text.replace(' ','_')
     stats_url = f"https://pageviews.toolforge.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&range=latest-20&pages={page_title}"
     driver.execute_script("window.open('');")
@@ -181,6 +182,7 @@ def main_function():
             return None
 
         if  "search page" or "main page" in query:
+            speak("search page loading")
             search_page()
             time.sleep(1)
             
@@ -206,6 +208,7 @@ def main_function():
             time.sleep(3)
             
         if "google" in query:
+            speak(query)
             driver.execute_script("window.open('');")
             driver.switch_to.window(driver.window_handles[1])
             driver.get("https://www.google.com")
@@ -274,11 +277,13 @@ def main_function():
                 #move up (working)
                 if "up" in query2:
                     # if already on the top, then speak feedback ---------------
+                    speak("Moving up")
                     move_up()
                     
                 # move down
                 elif "down" in query2:
                     # if already on the bottom, then speak feedback ---------------
+                    speak("Moving down")
                     move_down()
                 
                 # web page statistics  (working)
