@@ -359,7 +359,11 @@ def main_function():
                         curr_para_index += 1
                         curr_para = all_paras[curr_para_index]
                     
-                    speak(curr_para.get_text())
+                    text = curr_para.get_text()
+                    # Clean text
+                    text = re.sub(r'\[.*?\]+', '', text)
+                    text = text.replace('\n', '')
+                    speak(text)
                 
                 
                 # prev para ---------------
@@ -369,7 +373,12 @@ def main_function():
                         curr_para_index -= 1
                         curr_para = all_paras[curr_para_index]
                 
-                    speak(curr_para.get_text())
+                    # speak(curr_para.get_text())
+                    text = curr_para.get_text()
+                    # Clean text
+                    text = re.sub(r'\[.*?\]+', '', text)
+                    text = text.replace('\n', '')
+                    speak(text)
                 
                 
     #             next image
