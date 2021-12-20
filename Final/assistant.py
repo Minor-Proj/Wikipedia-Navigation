@@ -16,6 +16,8 @@ import re
 import json
 import requests
 import keyboard
+from wiki_tables import *
+
 
 pygame.init()
 
@@ -232,6 +234,7 @@ def main_function():
             # Scrapping content from wikipedia
             try:
                 all_links,all_headings,all_paras,all_images = getAllContent()
+                all_tables = get_all_tables(driver.current_url)
             except:
                 speak("Could not found,try again!")
                 search_page()
@@ -240,6 +243,7 @@ def main_function():
             curr_link = all_links[0]
             curr_heading = all_headings[1]
             curr_para = all_paras[0]
+            curr_table = all_tables[0]
             #curr_image = all_images[0]
             
             # length of all contents
@@ -247,6 +251,7 @@ def main_function():
             all_heading_len = len(all_headings)
             all_para_len = len(all_paras)
             all_image_len = len(all_images)
+            all_table_len = len(all_tables)
             imgList=[]
             for images in all_images:
                 imgList.append(images['src'])
@@ -351,6 +356,32 @@ def main_function():
                     curr_heading_id = curr_heading.get_text().replace(" ","_").replace("[edit]",'')
                     ActionChains(driver).move_to_element(driver.find_element_by_id(curr_heading_id)).perform()
                     time.sleep(1)
+                
+                elif "next table" in query2:
+                    curr_table_index = all_tables.index(curr_table)
+                    if curr_table_index < all_table_len:
+                        curr_table_index += 1
+                        curr_table = all_tables[curr_table_index]
+
+                        
+                    speak(curr_table[0])
+                    speak(curr_table[1])
+                    time.sleep(1)
+            
+            
+            
+                # prev heading ---------------
+                elif "previous table" in query2:
+                    curr_table_index = all_tables.index(curr_table)
+                    if curr_table_index > 1:
+                        curr_table_index -= 1
+                        curr_table = all_tables[curr_table_index]
+
+                    speak(curr_table[0])
+                    speak(curr_table[1])
+                    time.sleep(1)
+                
+                
                 
                 # next para ---------------
                 elif "next para" in query2 or "next paragraph" in query2:

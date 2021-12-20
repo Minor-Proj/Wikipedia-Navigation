@@ -37,6 +37,3 @@ def get_all_tables(URL):
 
 
 
-
-# wikiurl="https://en.wikipedia.org/wiki/MS_Dhoni"
-# print(get_all_tables(wikiurl))
