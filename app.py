@@ -192,22 +192,27 @@ def main_function():
             speak("searching dictionary")
             query=query.replace("dictionary","")
             query=query.replace(" ","")
-            x=dictionary(query)
-            speak(x["meanings"][0]["definitions"][0]["definition"])
-            time.sleep(2)
-            
+            try:
+                x=dictionary(query)
+                speak(x["meanings"][0]["definitions"][0]["definition"])
+                time.sleep(2)
+            except:
+                speak("Could not understood, please try again")
         if "news" in query:
             speak("fetching news")
             query=query.replace("news","")
             query=query.replace(" ","")
-            y=news(query)
-            speak("first headline")
-            speak(y["articles"][0]["content"])
-            speak("second headline")
-            speak(y["articles"][1]["content"])
-            speak("third headline")
-            speak(y["articles"][2]["content"])
-            time.sleep(3)
+            try:
+                y=news(query)
+                speak("first headline")
+                speak(y["articles"][0]["content"])
+                speak("second headline")
+                speak(y["articles"][1]["content"])
+                speak("third headline")
+                speak(y["articles"][2]["content"])
+                time.sleep(3)
+            except:
+                speak("Could not understood, please try again")
             
         if "google" in query:
             speak(query)
